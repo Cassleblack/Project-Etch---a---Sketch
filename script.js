@@ -1,6 +1,6 @@
-function squareGrid (clickEvent) {
-    const container = document.querySelector("#container");
-    let numOfSquares = 32;
+function squareGrid(clickEvent) {
+    const container = document.querySelector(".container");
+    let numOfSquares = 15;
 
     if (clickEvent) {
         const squares = document.querySelectorAll(".square");
@@ -9,18 +9,18 @@ function squareGrid (clickEvent) {
         });
 
         do {
-            numOfSquares = parseInt(prompt("Enter the numbeer of square you want: "));
+            numOfSquares = parseInt(prompt("Enter the number of square you want: "));
 
             if (numOfSquares > 100) alert("Enter a number between 1 & 100");
         } while (numOfSquares > 100)
     }
 
     for (let i = 1; i <= numOfSquares**2; i++) {
-        const square = document.createComment("div");
+        const square = document.createElement("div");
         square.setAttribute("class", "square");
 
-        square.style.height = `${704 / numOfSquares -2}`;
-        square.style.width = `${704 / numOfSquares -2}`;
+        square.style.height = `${(704 / numOfSquares) -2}px`;
+        square.style.width = `${(704 / numOfSquares) -2}px`;
 
         container.appendChild(square);
     }
@@ -29,13 +29,13 @@ function squareGrid (clickEvent) {
         const squareColor = [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256),];
         let target = e.target;
 
-        target.style.backgroundcolor = `rgb(${squareColor.join(",")})`;
+        target.style.backgroundColor = `rgb(${squareColor.join(",")})`;
     });
 }
 
-squareGrid ();
+squareGrid();
 
-const reziseGridBtn = document.querySelector("#resizeGrid");
+const resizeGridBtn = document.querySelector("#resizeGrid");
 resizeGridBtn.addEventListener("click", (e) => {
     squareGrid(e);
-})
+});
