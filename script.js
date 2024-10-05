@@ -15,5 +15,15 @@ function squareGrid (clickEvent) {
         } while (numOfSquares > 100)
     }
 
-    
+    for (let i = 1; i <= numOfSquares**2; i++) {
+        const square = document.createComment("div");
+        square.setAttribute("class", "square");
+
+        square.style.height = `${704 / numOfSquares -2}`;
+        square.style.width = `${704 / numOfSquares -2}`;
+
+        container.appendChild(square);
+    }
+
+    const 
 }
