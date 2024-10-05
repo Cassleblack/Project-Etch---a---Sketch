@@ -25,5 +25,10 @@ function squareGrid (clickEvent) {
         container.appendChild(square);
     }
 
-    const 
+    container.addEventListener("mouseover", (e) => {
+        const squareColor = [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256),];
+        let target = e.target;
+
+        target.style.backgroundcolor = `rgb(${squareColor.join(",")})`;
+    });
 }
