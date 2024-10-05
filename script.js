@@ -32,3 +32,10 @@ function squareGrid (clickEvent) {
         target.style.backgroundcolor = `rgb(${squareColor.join(",")})`;
     });
 }
+
+squareGrid ();
+
+const reziseGridBtn = document.querySelector("#resizeGrid");
+resizeGridBtn.addEventListener("click", (e) => {
+    squareGrid(e);
+})
