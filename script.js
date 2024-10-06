@@ -30,6 +30,7 @@ function squareGrid(clickEvent) {
         let target = e.target;
 
         target.style.backgroundColor = `rgb(${squareColor.join(",")})`;
+        /*target.style.backgroundColor = `rgb(255, 255, 0)`;*/
     });
 }
 
